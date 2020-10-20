@@ -1,5 +1,6 @@
 <?php include("includes/header.php") ?>
 <?php include("datadb/data.php") ?>
+<?php include("movies.php") ?>
 
     
 <div class="jumbotron jumbotron-fluid">
@@ -62,9 +63,11 @@
         <tbody>
             <tr>
             <th scope="row">1</th>
-                <td><?= $_POST['text'] ?></td>
-                <td><?= $_POST['plato'] ?></td>
-                <td><?= $_POST['size'] ?></td>
+                <?php if(isset($_POST['text'])) { ?>
+                    <td><?= $_POST['text'] ?></td>
+                    <td><?= $_POST['plato'] ?></td>
+                    <td><?= $_POST['size'] ?></td>
+                <?php } ?>
             </tr>
         </tbody>
     </table>
@@ -72,15 +75,53 @@
 </section>
 
 <section class="container">
-    <p>
-    3. Usa un array clave-valor para definir los datos de un usuario y escríbelos en una tabla en un documento HTML.
-    </p>
+    <p>3. Usa un array clave-valor para definir los datos de un usuario y escríbelos en una tabla en un documento HTML.</p>
+
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Altura</th>
+      <th scope="col">Fans</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><?= $usuario['nombre'] ?></td>
+      <td><?= $usuario['edad'] ?></td>
+      <td><?= $usuario['altura'] ?></td>
+      <td><?= $usuario['fans'] ?></td>
+    </tr>
+  </tbody>
+</table>
+
 </section>
 
 <section class="container">
     <p>
     4. Usa una clase para definir una película. Crea varios objetos Película y dibujarlos en “cards” en un documento HTML.
     </p>
+
+    <div class="row">
+        <div class="card col-3" style="width: 18rem; margin: 10px;">
+            <img src="https://sm.ign.com/ign_es/screenshot/default/deadpool-2_5szd.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        
+        <?php 
+            $movie = new Movie();
+            $card = $movie->TheMovie();
+        ?>
+        <div class="card col-3" style="width: 18rem; margin: 10px;">
+            <?= $card ?>
+        </div>
+    </div>
+
 </section>
 
 
