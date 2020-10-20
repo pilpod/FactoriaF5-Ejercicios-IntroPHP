@@ -104,13 +104,20 @@
     </p>
 
     <div class="row">
-        <?php 
-            $movie = new Movie();
-            $card = $movie->TheMovie();
-        ?>
-        <div class="card col-3" style="width: 18rem; margin: 10px;">
-            <?= $card ?>
-        </div>
+
+        <?php for($fila = 0; $fila < count($peliculas); $fila++) { ?>
+            
+            <div class="card" style="width: 18rem; margin: 10px">             
+                <img src="<?= $peliculas[$fila]['img']; ?>" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $peliculas[$fila]['title']; ?></h5>
+                    <p class="card-text"><?= $peliculas[$fila]['movieText']; ?></p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+        <?php } ?>
+        
     </div>
 
 </section>

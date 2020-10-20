@@ -2,17 +2,12 @@
 
     class Movie {
 
-        public $urlImg;
         public $title;
+        public $urlImg;
         public $cardText;
 
-        public function TheMovie() {
-            $urlImg = "https://sm.ign.com/ign_es/screenshot/default/deadpool-2_5szd.jpg";
-
-            $title = 'DeadPool';
-
-            $cardText = 'Some quick example text to build on the card title.';
-
+        /* public function TheMovie() {
+            
             return 
                 '
                     <img src=' . $urlImg . ' class="card-img-top" alt="...">
@@ -22,8 +17,10 @@
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                 ';
-        }
+        } */
 
     }
 
 ?>
+
+
