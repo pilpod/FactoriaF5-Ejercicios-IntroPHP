@@ -106,12 +106,19 @@
     <div class="row">
 
         <?php for($fila = 0; $fila < count($peliculas); $fila++) { ?>
+
+            <?php 
+                $movie = new Movie();
+                $movie->title = $peliculas[$fila]['title'];
+                $movie->urlImg = $peliculas[$fila]['img'];
+                $movie->cardText = $peliculas[$fila]['movieText'];
+            ?>
             
             <div class="card" style="width: 18rem; margin: 10px">             
-                <img src="<?= $peliculas[$fila]['img']; ?>" class="card-img-top" alt="...">
+                <img src="<?= $movie->urlImg ?>" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title"><?= $peliculas[$fila]['title']; ?></h5>
-                    <p class="card-text"><?= $peliculas[$fila]['movieText']; ?></p>
+                    <h5 class="card-title"><?= $movie->title ?></h5>
+                    <p class="card-text"><?= $movie->cardText ?></p>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
