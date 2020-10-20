@@ -51,7 +51,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-    <table class="table table-dark">
+    <table class="table table-dark" style="margin-top: 20px;">
         <thead>
             <tr>
             <th scope="col">#</th>
@@ -104,15 +104,6 @@
     </p>
 
     <div class="row">
-        <div class="card col-3" style="width: 18rem; margin: 10px;">
-            <img src="https://sm.ign.com/ign_es/screenshot/default/deadpool-2_5szd.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-        
         <?php 
             $movie = new Movie();
             $card = $movie->TheMovie();
@@ -123,14 +114,6 @@
     </div>
 
 </section>
-
-
-
-
-
-
-   
-    
 
 
 <?php include("includes/footer.php") ?>
